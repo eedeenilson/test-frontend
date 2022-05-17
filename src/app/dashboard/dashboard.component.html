@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <mat-tab-group>
+            <mat-tab label="EVENTS">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">event</i>
+                                </div>
+                                <p class="card-category">Events</p>
+                                <h3 class="card-title">
+                                    {{events.length}}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">people</i>
+                                </div>
+                                <p class="card-category">Attendees</p>
+                                <h3 class="card-title"> 500 </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">attach_money</i>
+                                </div>
+                                <p class="card-category">Collections</p>
+                                <h3 class="card-title">{{money | currency }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-rose card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">person</i>
+                                </div>
+                                <p class="card-category">User</p>
+                                <h3 class="card-title">{{usr}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

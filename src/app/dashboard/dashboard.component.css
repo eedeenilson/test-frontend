@@ -1,0 +1,18 @@
+.centrar-usr {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    margin-right: 20px;
+}
+
+.greenClass{
+    color: green;
+}
+
+.redClass{
+    color: red;
+}
+
+.yellowClass{
+    color: #b88907;
+}

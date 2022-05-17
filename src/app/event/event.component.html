@@ -1,0 +1,114 @@
+<!-- 
+    Nada fuera de lo comun o astral.
+    *ngIf, ngModel, *ngFor... Y estructura basica de HTML.
+
+    En el css del componente excedente esta una clase centrar. 
+-->
+<mat-tab-group>
+    <mat-tab label="EVENTS"> 
+        <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-rose">
+                            <h4 class="card-title "> New Event </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for=""><b>Name</b></label>
+                                <input [(ngModel)]="event.name" type="text" class="form-control" id="" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for=""><b>Event date</b></label>
+                                <input [(ngModel)]="event.event_date" type="datetime-local" class="form-control" id="">
+                            </div>
+                            <div class="form-group">
+                            <label for=""><b>Location</b></label>
+                            <select [(ngModel)]="event.fk_locationId" class="form-control" id="">
+                                <option *ngFor="let location of locations" [ngValue]="location.id"> {{location.name}} </option>
+                            </select>
+                            </div>
+                            <div class="row">
+                                <div class="col centrar">
+                                    <button (click)="saveEvent()" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> 
+    </mat-tab>
+    <mat-tab label="GROUPS">  
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-rose">
+                        <h4 class="card-title "> New Group </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for=""><b>Name</b></label>
+                            <input [(ngModel)]="group.name" type="text" class="form-control" id="" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                        <label for=""><b>Event</b></label>
+                        <select [(ngModel)]="group.fk_eventId" class="form-control" id="">
+                            <option *ngFor="let event of events" [ngValue]="event.id"> {{event.name}} </option>
+                        </select>
+                        </div>
+                        <div class="row">
+                            <div class="col centrar">
+                                <button (click)="saveGroup()" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="ATTENDEES">  
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-rose">
+                        <h4 class="card-title "> Attendee </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for=""><b>Name</b></label>
+                            <input [(ngModel)]="attendee.name" type="text" class="form-control" id="" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label for=""><b>Identification number</b></label>
+                            <input [(ngModel)]="attendee.identification_number" type="text" class="form-control" id="" placeholder="Enter ID">
+                        </div>
+                        <div class="form-group">
+                        <label for=""><b>Event</b></label>
+                        <select [(ngModel)]="group.fk_eventId" class="form-control" id="selectEvent" (change)='getGroups(group.fk_eventId)'>
+                            <option *ngFor="let event of events" [ngValue]="event.id"> {{event.name}} </option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <label for=""><b>Group</b></label>
+                            <select [(ngModel)]="attendee.fk_groupId" class="form-control" id="">
+                                <option *ngFor="let group of groups" [ngValue]="group.id"> {{group.name}} </option>
+                            </select>
+                            </div>
+                        <div class="row">
+                            <div class="col centrar">
+                                <button (click)="saveAttendee()" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<div class="centrar-usr">
+    {{usr}}
+</div>

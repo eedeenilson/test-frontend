@@ -1,0 +1,31 @@
+.tab {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.centrar {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.centrar-usr {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    margin-right: 20px;
+}
+
+.actionButton{
+    width: 30px;
+    padding: 5px;
+    margin: 1px;
+}
+
+.actionColorRed{
+    color: red;
+}
+
+.actionColorGreen{
+    color: green;
+}
